@@ -7,9 +7,7 @@
 ```
 /project-root
 │── /app                    # FastAPI backend
-│── /frontend               # React frontend (optional)
 │── /frontend_streamlit     # Streamlit frontend
-│── .env                    # Environment variables
 │── README.md               # This file
 ```
 
