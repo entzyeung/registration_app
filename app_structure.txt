@@ -1,0 +1,32 @@
+/project-registration application
+├── /app                        # Main backend source code directory for the FastAPI application.
+│   ├── /db                     # Database-related code for managing persistent storage.
+|   |   ├── registration.db     # SQLite database file, auto-created by postgres_db.py to store session data (e.g., session_id, collected_data, current_question, current_node). #database #persistence
+|   |   └── postgres_db.py        # Defines RegistrationState dataclass and SQLite database operations (init_db, upsert_session_to_db, fetch_session_from_db) for session management. #sqlite #session-management #dataclass
+|   |
+│   ├── /graph                  # Graph-based workflow logic for managing the registration process.
+|   |   ├── base_graph.py       # Implements BaseGraphManager, a generic class for creating and running stateful graphs with LangGraph, including node creation and Mermaid diagram generation. #langgraph #state-machine #base-class
+|   |   └── registration_graph.py # Extends BaseGraphManager to create RegistrationGraphManager with conditional edges for skipping optional steps (e.g., address, phone). #workflow #conditional-logic #registration
+|   |
+│   ├── /helpers                # Utility and configuration files for shared settings.
+|   |   └── config.py           # Loads environment variables (e.g., OPENAI_API_KEY, VALIDATION_ENGINE) and defines constants like GRAPH_OUTPUT_DIR. #configuration #environment
+|   |
+|   |
+│   ├── /validation             # Input validation logic to ensure user responses meet required formats.
+|   |   ├── base_validator.py   # Defines BaseValidator, an abstract base class with a validate method for standardizing validation strategies. #abstract-class #validation
+|   |   ├── chatgpt_validator.py # Implements ChatGPTValidator using OpenAI’s GPT-4.1-mini for validating user inputs with JSON responses and Guardrails AI. #chatgpt #validation #openai
+|   |   ├── dspy_validator.py   # Implements DSPyValidator using DSPy and Guardrails AI for semantic and structural validation of user inputs. #dspy #validation #guardrails
+|   |   ├── factory.py          # Defines ValidatorFactory to dynamically create validator instances (DSPy or ChatGPT) based on VALIDATION_ENGINE. #factory-pattern #validation
+|   |   └── validated_response.py # Pydantic model (ValidatedLLMResponse) for validating and formatting LLM responses, enforcing structure with Guardrails AI. #pydantic #response-validation #guardrails
+|   |
+│   ├── render.yml              # architecture file for render.com
+│   ├── main.py                 # FastAPI application with endpoints (/start_registration, /submit_response, /edit_field) to manage the registration workflow. #fastapi #api #endpoints
+│   └── requirements.txt        # Lists Python dependencies (e.g., FastAPI, LangGraph, SQLite) for the backend. #dependencies #pip
+|
+├── /frontend_streamlit
+│   ├── README.md
+│   ├── requirements.txt
+│   └── index.py                # Streamlit frontend for the registration system, handling user interactions, API calls, and displaying questions, feedback, and summaries. #streamlit #frontend #ui
+|
+├── .gitignore                  # Specifies files/directories (e.g., .env, pycache) to exclude from version control. #git #version-control
+└── LICENSE                     # Defines the project’s licensing terms (e.g., MIT, Apache). #license #legal

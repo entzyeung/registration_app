@@ -41,7 +41,7 @@ class ValidateUserAnswer(dspy.Signature):
             "- Validate as a UK landline (10 digits, starts with '0' but not '07') or mobile (11 digits, starts with '07'). "
             "- Format valid landlines as 0XX XXX XXXX and mobiles as 07XXX XXX XXX. "
             "- Reject invalid formats (e.g., too short, wrong digit count, or non-UK formats) with status='clarify'. "
-            "An address must include: house number, street name, town/city, and postcode. "
+            "An address must include: house number, street name, town/city, and postcode. House number and street name can be one component. If head starts with Ra, ra, fa, flata, etc, it means Room A or Flat A. 'R' or 'r' in the front means Room; 'F' or f 'f' means Flat"
             "Reject responses that do not meet these formats with status='clarify'. "
             "If the response cannot be formatted, return the original answer."
     )

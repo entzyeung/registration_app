@@ -1,0 +1,7 @@
+# Frontend
+python-dotenv==1.1.0
+
+requests==2.32.4
+
+
+streamlit==1.46.0

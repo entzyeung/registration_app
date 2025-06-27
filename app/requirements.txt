@@ -1,3 +1,4 @@
+# Backend
 click==8.1.8
 dataclasses-json==0.6.7
 datasets==3.6.0
@@ -24,5 +25,5 @@ scipy==1.13.1
 
 uvicorn==0.34.3
 guardrails-ai==0.6.6
-streamlit==1.46.0
+# streamlit==1.46.0
 psycopg2-binary

@@ -1,12 +1,21 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-import uuid # module to generate unique session IDs.
+from fastapi.responses import StreamingResponse  # Added missing import
+import uuid
 import logging
 from validation.factory import validate_user_input
-from db.sqlite_db import fetch_session_from_db, upsert_session_to_db, RegistrationState
-from graph.registration_graph import RegistrationGraphManager # manages the registration workflow with conditional paths (e.g., skipping address/phone).
+from db.postgres_db import fetch_session_from_db, upsert_session_to_db, RegistrationState
+from graph.registration_graph import RegistrationGraphManager
+import pandas as pd
+import io
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
+
+logging.basicConfig(level=logging.INFO)
 
 app.add_middleware(
     CORSMiddleware,
@@ -15,6 +24,8 @@ app.add_middleware(
         "http://localhost:8080",
         "http://localhost:5173",
         "http://localhost:8501",  # Added for Streamlit
+        "https://huggingface.co/spaces/Entz/council_3",  # Add your Hugging Face Space URL
+
     ],
     allow_credentials=True, # Permits cookies/credentials in requests.
     allow_methods=["*"], # Allows all HTTP methods (GET, POST, etc.).
