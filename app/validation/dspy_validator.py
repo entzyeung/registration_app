@@ -2,7 +2,7 @@ import guardrails as gd
 import dspy
 from validation.base_validator import BaseValidator
 from pydantic import ValidationError
-from validation.validated_response import ValidatedLLMResponse
+from app.validation.validated_response import ValidatedLLMResponse
 from typing import Literal
 import logging
 import json

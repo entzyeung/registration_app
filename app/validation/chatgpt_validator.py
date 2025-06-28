@@ -2,8 +2,8 @@ import openai
 import guardrails as gd
 import json
 from typing import Dict
-from validation.base_validator import BaseValidator
-from validation.validated_response import ValidatedLLMResponse
+from app.validation.base_validator import BaseValidator
+from app.validation.validated_response import ValidatedLLMResponse
 from helpers.config import OPENAI_API_KEY, MLFLOW_ENABLED, MLFLOW_EXPERIMENT_NAME
 import mlflow
 
