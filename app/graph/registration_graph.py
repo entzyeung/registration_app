@@ -7,7 +7,7 @@ The generate_mermaid_diagram method visualizes the graph as a PNG, aiding debugg
 """
 
 from langgraph.graph import END
-from db.postgres_db import RegistrationState
+from db.sqlite_db import RegistrationState
 from graph.base_graph import BaseGraphManager
 import logging
 

@@ -22,8 +22,8 @@ regex==2024.11.6
 requests==2.32.4
 scikit-learn==1.6.1
 scipy==1.13.1
-
+sqlite-fts4==1.0.3
+sqlite-utils==3.38
 uvicorn==0.34.3
 guardrails-ai==0.6.6
 # streamlit==1.46.0
-psycopg2-binary

@@ -30,4 +30,4 @@ services:
     disk: # Defines persistent storage for PostgreSQL data.
       name: registration-data
       mountPath: /var/lib/postgresql/data
-      sizeGB: 1 # Monitor usage; increase if needed
+      sizeGB: 0.1 # Monitor usage; increase if needed

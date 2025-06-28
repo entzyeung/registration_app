@@ -42,7 +42,7 @@ class BaseGraphManager:
             # If the attribute doesn’t exist, it returns an empty dictionary {}.
             ### why not state.collected_data? coz getattr handles no value error with {}.
             # when is state updated? when this ask_question function is called, the state is updated in the Ram.
-            # when is state persisted? when the "postgres_db.py/upsert_session_to_db" get called.
+            # when is state persisted? when the "sqlite_db.py/upsert_session_to_db" get called.
 
             "current_question": question_text,
         }

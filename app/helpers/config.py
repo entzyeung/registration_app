@@ -11,7 +11,3 @@ MLFLOW_ENABLED = os.getenv("MLFLOW_ENABLED", "False").lower() in ("true", "1")
 MLFLOW_EXPERIMENT_NAME = os.getenv("MLFLOW_EXPERIMENT_NAME", "DefaultExperiment")
 GRAPH_OUTPUT_DIR = os.getenv("GRAPH_OUTPUT_DIR", "LangGraph_Output")
 
-# Because we use PostgreSQL
-DATABASE_URL = os.getenv("DATABASE_URL")
-if not DATABASE_URL:
-    raise ValueError("Missing DATABASE_URL. Set the DATABASE_URL environment variable.")
