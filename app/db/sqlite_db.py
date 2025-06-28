@@ -9,9 +9,10 @@ from typing import Optional
 from dataclasses import dataclass
 
 ################################################################
-## Define SQLite database file in Render, different from local
+### Define SQLite database file in Render, different from local environment.
+### and /app is not writable, recommended to use tmp/
 # DB_FILE = "./db/registration.db"
-DB_FILE = "/app/db/registration.db"
+DB_FILE = "/tmp/registration.db"
 ##################################################################
 
 
