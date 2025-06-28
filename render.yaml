@@ -15,6 +15,6 @@ services:
         - key: MLFLOW_EXPERIMENT_NAME
           value: DefaultExperiment
         - key: GRAPH_OUTPUT_DIR
-          value: /app/LangGraph_Output
+          value: /tmp/LangGraph_Output
         - key: PYTHON_VERSION
           value: 3.10.14  # Updated to include patch version

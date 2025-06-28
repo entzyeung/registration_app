@@ -9,5 +9,5 @@ if not OPENAI_API_KEY:
 VALIDATION_ENGINE = os.getenv("VALIDATION_ENGINE", "dspy") # chatgpt or dspy
 MLFLOW_ENABLED = os.getenv("MLFLOW_ENABLED", "False").lower() in ("true", "1")
 MLFLOW_EXPERIMENT_NAME = os.getenv("MLFLOW_EXPERIMENT_NAME", "DefaultExperiment")
-GRAPH_OUTPUT_DIR = os.getenv("GRAPH_OUTPUT_DIR", "LangGraph_Output")
+GRAPH_OUTPUT_DIR = os.getenv("GRAPH_OUTPUT_DIR", "/tmp/LangGraph_Output")
 
