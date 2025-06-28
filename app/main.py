@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse  # Added missing import
 import uuid
 import logging
-from validation.factory import validate_user_input
+from app.validation.factory import validate_user_input
 from db.sqlite_db import fetch_session_from_db, upsert_session_to_db, RegistrationState
 from graph.registration_graph import RegistrationGraphManager
 import pandas as pd
