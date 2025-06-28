@@ -9,7 +9,8 @@ import os
 
 
 load_dotenv()
-API_URL = os.getenv("API_URL", "http://localhost:8000")
+API_URL = os.getenv("API_URL")
+
 
 TRANSITION_MESSAGES = [
     "Now we are moving onto question {number}!",
