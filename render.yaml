@@ -17,4 +17,4 @@ services:
         - key: GRAPH_OUTPUT_DIR
           value: /app/LangGraph_Output
         - key: PYTHON_VERSION
-          value: 3.10
+          value: 3.10.14  # Updated to include patch version
