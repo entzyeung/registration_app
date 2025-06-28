@@ -1,13 +1,13 @@
 import guardrails as gd
 import dspy
 from app.validation.base_validator import BaseValidator
-from pydantic import ValidationError
 from app.validation.validated_response import ValidatedLLMResponse
+from pydantic import ValidationError
 from typing import Literal
 import logging
 import json
 import mlflow
-from helpers.config import OPENAI_API_KEY, MLFLOW_ENABLED, MLFLOW_EXPERIMENT_NAME
+from app.helpers.config import OPENAI_API_KEY, MLFLOW_ENABLED, MLFLOW_EXPERIMENT_NAME
 
 ###############################################
 ############# Semantic validation #############

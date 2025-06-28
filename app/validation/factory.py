@@ -1,6 +1,6 @@
 from app.validation.dspy_validator import DSPyValidator
 from app.validation.chatgpt_validator import ChatGPTValidator
-from helpers.config import VALIDATION_ENGINE
+from app.helpers.config import VALIDATION_ENGINE
 
 
 # ValidatorFactory: enables switching between validators, facilitating experimentation.

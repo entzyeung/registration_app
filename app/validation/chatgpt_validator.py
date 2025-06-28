@@ -4,7 +4,7 @@ import json
 from typing import Dict
 from app.validation.base_validator import BaseValidator
 from app.validation.validated_response import ValidatedLLMResponse
-from helpers.config import OPENAI_API_KEY, MLFLOW_ENABLED, MLFLOW_EXPERIMENT_NAME
+from app.helpers.config import OPENAI_API_KEY, MLFLOW_ENABLED, MLFLOW_EXPERIMENT_NAME
 import mlflow
 
 if MLFLOW_ENABLED:
