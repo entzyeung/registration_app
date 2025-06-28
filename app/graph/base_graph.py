@@ -1,7 +1,7 @@
 from langgraph.graph import StateGraph # creating stateful graph-based workflows.
 from langgraph.graph import END
 
-from helpers.config import GRAPH_OUTPUT_DIR
+from app.helpers.config import GRAPH_OUTPUT_DIR
 import logging
 import os
 
