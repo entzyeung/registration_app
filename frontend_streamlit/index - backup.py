@@ -31,6 +31,7 @@ def start_registration():
         response.raise_for_status()
         data = response.json()
         print("API Response:", data)
+        # Reset session state for new registration
         st.session_state.session_id = data["session_id"]
         st.session_state.current_question = data["message"]
         st.session_state.feedback = ""
@@ -117,13 +118,13 @@ def main():
 
     # Tab 1: Introduction
     with tab1:
-        st.subheader("About This Application")
+        # st.subheader("About This Application")
         intro_content = read_content_from_file("tab1.txt")
         st.markdown(intro_content)
 
     # Tab 2: Registration Application
     with tab2:
-        # st.subheader("Registration")
+        st.subheader("Registration")
         registration_content = read_content_from_file("tab2.txt")
         st.markdown(registration_content)
         st.markdown("**Developed by entzyeung@gmail.com**")
@@ -138,10 +139,10 @@ def main():
                     edit_field(key, new_value)
             col1, col2 = st.columns(2)
             with col1:
-                if st.button("Next Registration", key="next_reg", on_click=start_registration):
+                if st.button("Next Registration", key="next_reg", on_click=lambda: (start_registration(), st.rerun())):
                     pass
             with col2:
-                if st.button("End Session", key="end_sess", on_click=start_registration):
+                if st.button("End Session", key="end_sess", on_click=lambda: (start_registration(), st.rerun())):
                     pass
         else:
             if st.session_state.get("current_question"):

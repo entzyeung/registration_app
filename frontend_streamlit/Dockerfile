@@ -9,6 +9,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application files
 COPY index.py .
+COPY tab1.txt .
+COPY tab2.txt .
 
 # Expose Streamlit port
 EXPOSE 8501

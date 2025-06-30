@@ -1,11 +1,8 @@
 import sqlite3
 import json
-
-# Optional from the typing module: return type can be a specific type or None.
 from typing import Optional
 
-# decorator from the dataclasses module, 
-# which simplifies class creation by automatically generating methods like __init__ for data storage classes.
+
 from dataclasses import dataclass
 
 ################################################################
@@ -16,10 +13,6 @@ DB_FILE = "/tmp/registration.db"
 ##################################################################
 
 
-
-# @dataclass decorator automatically generates an __init__ method 
-# to initialize these attributes, 
-# along with other methods like __repr__.
 @dataclass
 class RegistrationState:
     session_id: str
@@ -44,14 +37,13 @@ def init_db():
         )
         conn.commit()
 
-# Insert or update a session in SQLite
 def upsert_session_to_db(session_id: str,
                          collected_data: dict,
                          current_question: str,
                          current_node: str
                          ):
 
-    collected_data_json = json.dumps(collected_data) # Converts the collected_data dictionary to a JSON string using json.dumps
+    collected_data_json = json.dumps(collected_data) 
     with sqlite3.connect(DB_FILE) as conn:
         cursor = conn.cursor()
         cursor.execute(
@@ -63,11 +55,10 @@ def upsert_session_to_db(session_id: str,
                 current_question = excluded.current_question,
                 current_node = excluded.current_node
             """,
-            (session_id, collected_data_json, current_question, current_node), # a tuple containing the values that will replace the ? placeholders in the SQL INSERT statement.
+            (session_id, collected_data_json, current_question, current_node), 
         )
         conn.commit()
 
-# Fetch a session from SQLite & return as a dictionary
 def fetch_session_from_db(session_id: str) -> Optional[dict]:
     with sqlite3.connect(DB_FILE) as conn:
         cursor = conn.cursor()
@@ -88,5 +79,4 @@ def fetch_session_from_db(session_id: str) -> Optional[dict]:
         }
     return None
 
-# Initialize database on import
 init_db()
