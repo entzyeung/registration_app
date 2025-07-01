@@ -1,6 +1,6 @@
 Data quality issues have long plagued council databases, burdening W2 workflow teams (e.g. the Assisted Travel Team's dashboard I am working on), data analysts, and engineers with manual cleaning and validation. This pilot explores how AI-driven workflows can address these pain points by streamlining user registration, ensuring accurate data collection, and reducing validation overhead.
 
-* If 403 or 443 Error, it is because the backend server is being spinned up. Please stay patient and try refresh the page every 1 minute. It takes 1-3mins to spin up usually. 2mins is the average; but could take 5mins or more.
+* If 403 or other connection errors, it is because the backend server is being spinned up. Please stay patient and try refresh the page every 1 minute. It takes 1-3mins to spin up usually. 2mins is the average; but could take 5mins or more.
 
 ### What is this Registration System?
 This application leverages **FastAPI**, **LangGraph**, and **AI validation** (**ChatGPT** with **Guardrails AI** and **dspy**) to collect user information (email, name, address, phone, username, password (included only a few for demo purpose)) with optional fields and real-time validation.  It uses real-time validation to enforce formats (e.g., addresses, phone numbers), minimizing errors and enhancing data integrity stored in a PostgreSQL database.
