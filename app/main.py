@@ -26,7 +26,7 @@ app.add_middleware(
         "http://localhost:8501",  # Added for Streamlit
         "https://huggingface.co/spaces/Entz/council_3",  # Add your Hugging Face Space URL
         "https://entz-council-3.hf.space",
-        "*"# Temporary wildcard for testing
+        # "*"# Temporary wildcard for testing
     ],
     allow_credentials=True, # Permits cookies/credentials in requests.
     allow_methods=["*"], # Allows all HTTP methods (GET, POST, etc.).
