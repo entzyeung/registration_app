@@ -20,7 +20,8 @@ TRANSITION_MESSAGES = [
 def start_registration():
     print("Starting registration...")
     try:
-        response = requests.post(f"{API_URL}/start_registration")
+        headers = {"Origin": "https://entz-council-3.hf.space"}
+        response = requests.post(f"{API_URL}/start_registration", headers=headers, timeout=10)
         response.raise_for_status()
         data = response.json()
         print("API Response:", data)
@@ -34,9 +35,13 @@ def start_registration():
         st.session_state.prev_question = ""
         st.session_state.question_number = 1
     except requests.RequestException as e:
-        print(f"Error starting registration: {e}")
+        print(f"Error starting registration: {e}, Response: {getattr(e.response, 'text', 'No response')}")
         st.error(f"Error starting registration: {e}")
-
+        
+        
+        
+        
+        
 def submit_response():
     if not st.session_state.session_id:
         st.error("No active session. Please start registration.")
