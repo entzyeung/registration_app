@@ -24,7 +24,7 @@ app.add_middleware(
         "http://localhost:8080",
         "http://localhost:5173",
         "http://localhost:8501",  # Added for Streamlit
-        # "https://huggingface.co/spaces/Entz/council_3",  # Add your Hugging Face Space URL
+        "https://huggingface.co/spaces/Entz/council_3",  # Add your Hugging Face Space URL
         "https://entz-council-3.hf.space",
 
     ],
