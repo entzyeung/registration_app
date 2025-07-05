@@ -127,7 +127,7 @@ def main():
         st.subheader("Registration")
         registration_content = read_content_from_file("tab2.txt")
         st.markdown(registration_content)
-        st.markdown("**Developed by entzyeung@gmail.com**")
+        st.markdown("*** If 403 or other connection errors, please refresh the page every 1 minute, because the backend server is being spun up. Developed by entzyeung@gmail.com**")
 
         if st.session_state.get("summary"):
             st.success("Registration Complete!")
