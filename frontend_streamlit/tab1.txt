@@ -1,22 +1,24 @@
-Data quality issues have long plagued council databases, burdening W2 workflow teams (e.g. the Assisted Travel Team's dashboard I am working on), data analysts, and engineers with manual cleaning and validation. This pilot explores how AI-driven workflows can address these pain points by streamlining user registration, ensuring accurate data collection, and reducing validation overhead.
+Data quality issues have long been one of the problems in the our databases, and costed data analysts, and scientists lots of time in manual cleaning and validation. This protype is demoing one of the use cases that AI-driven workflows can address this pain point by streamlining user registration, ensuring accurate data collection, and reducing validation overhead.
 
 
 ### What is this Registration System?
-This application leverages **FastAPI**, **LangGraph**, and **AI validation** (**ChatGPT** with **Guardrails AI** and **dspy**) to collect user information (email, name, address, phone, username, password (included only a few for demo purpose)) with optional fields and real-time validation.  It uses real-time validation to enforce formats (e.g., addresses, phone numbers), minimizing errors and enhancing data integrity stored in a PostgreSQL database.
+This application leverages **FastAPI**, **LangGraph**, and **AI validation** (**ChatGPT** with **Guardrails AI** and **dspy**) to collect user information (e.g. email, name, address, phone, username, password (including only a few for demo purpose)) with optional fields and real-time validation.  It uses real-time validation to enforce formats (e.g., addresses, phone numbers), minimizing errors and enhancing data integrity stored in a PostgreSQL database.
 
 ### How Does It Work?
 - **Register**: In the "Registration" tab, users answer a series of questions, with optional fields (address, phone) skippable.
-- **Validation**: AI validates inputs (e.g., e.g. address formats, phone numbers, will ask for clarification if ambiguous).
+- **Validation**: 2 layers, first AI validates inputs (e.g. address formats, phone numbers, will ask for clarification if ambiguous); 2nd traditional validation (e.g. by regex, make sure data comes from AI validation matches the minimal requirements.
 - **Data Storage**: Responses are saved securely in a database for review and editing (currently in a PostgreSQL db in another server.).
 
 ### Objectives
 - Address **data quality** issues by automating validation and reducing errors.
-- Enhance **efficiency** in user onboarding processes.
-- Explore **scalable**, secure registration systems for public sector applications. The Same logic could apply to Copilot's Agent, and Power Apps.
+- Enhance **efficiency** in user (e.g. residents/staffs) onboarding processes.
+- Explore **scalability**, the Same logic could apply to our Copilot's Agent, and Power Apps.
 
 ### Prototype
-We encourage you to test the system with varied inputs to evaluate its robustness. You will see the input summary in the end of registration. You will be amazed how the system would prompt you for the better answer if too ambiguous, and how capable it is in standardising and cleaning up the data.
+We encourage you to test the system with varied inputs to evaluate its robustness. You will see the input summary in the end of registration. You will be amazed by how the system would prompt you for the better answer if too ambiguous, and how capable it is in standardising and cleaning up the data. Do check out the my demo video.
 
-**Last Update**: 30th June 2025
+**Created on**: 30th June 2025
+**Last updated on**: 4th July 2025
+
 
 **By Lorentz Yeung, AI Engineer & Data Scientist**
