@@ -2,6 +2,11 @@
 
 *AI-powered registration system built with FastAPI, Streamlit, LangGraph, DSPy, Guardrails AI, and MLflow. The system guides users through a structured conversation, collecting registration details while leveraging AI validation to ensure input accuracy.*
 
+The demo app is deployed here: [https://huggingface.co/spaces/Entz/council_3](https://huggingface.co/spaces/Entz/council_3)
+Click it, spin up the frontend. After the frontend is kicked up, it will automatically spin up the backend as well. Just try to refresh every 1 minute if it is not ready. 
+
+The video demo is here: [https://www.youtube.com/watch?v=qb4z85aAMT8](https://www.youtube.com/watch?v=qb4z85aAMT8)
+
 ## Project Structure
 
 ```
