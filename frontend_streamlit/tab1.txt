@@ -1,5 +1,6 @@
-Data quality issues have long been one of the problems in the our databases, and costed data analysts, and scientists lots of time in manual cleaning and validation. This protype is demoing one of the use cases that AI-driven workflows can address this pain point by streamlining user registration, ensuring accurate data collection, and reducing validation overhead.
+Data quality issues have long been one of the problems in our databases, and costed data analysts, and scientists lots of time in manual cleaning and validation. This protype is demoing one of the use cases that AI-driven workflows can address this pain point by streamlining user registration, ensuring accurate data collection, and reducing validation overhead.
 
+The video demo is here: [https://www.youtube.com/watch?v=qb4z85aAMT8](https://www.youtube.com/watch?v=qb4z85aAMT8)
 
 ### What is this Registration System?
 This application leverages **FastAPI**, **LangGraph**, and **AI validation** (**ChatGPT** with **Guardrails AI** and **dspy**) to collect user information (e.g. email, name, address, phone, username, password (including only a few for demo purpose)) with optional fields and real-time validation.  It uses real-time validation to enforce formats (e.g., addresses, phone numbers), minimizing errors and enhancing data integrity stored in a PostgreSQL database.
