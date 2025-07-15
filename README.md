@@ -90,7 +90,7 @@ Create a `.env` file in the project root:
 
 ```ini
 OPENAI_API_KEY=your-api-key
-VALIDATION_ENGINE=chatgpt
+VALIDATION_ENGINE=dspy
 MLFLOW_ENABLED=True
 MLFLOW_EXPERIMENT_NAME=user_registration_validation_experiment
 GRAPH_OUTPUT_DIR=graph_images
