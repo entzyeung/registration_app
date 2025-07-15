@@ -93,5 +93,5 @@ OPENAI_API_KEY=your-api-key
 VALIDATION_ENGINE=dspy
 MLFLOW_ENABLED=True
 MLFLOW_EXPERIMENT_NAME=user_registration_validation_experiment
-GRAPH_OUTPUT_DIR=graph_images
+GRAPH_OUTPUT_DIR=GRAPH_OUTPUT_DIR
 ```
